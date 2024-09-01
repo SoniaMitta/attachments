@@ -1,0 +1,47 @@
+{
+  "name": "upload-xl",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@cap-js/postgres": "^1.10.0",
+    "@sap/cds": "^8.1.1",
+    "express": "^4.19.2",
+    "multer": "^1.4.5-lts.1",
+    "passport": "^0.7.0",
+    "pg": "^8.12.0",
+    "uuid": "^10.0.0",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@cap-js/cds-types": "^0.6",
+    "@cap-js/sqlite": "^1",
+    "@sap/ux-specification": "^1.120.17"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch-hydmetro": "cds watch --open hydmetro/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-metro": "cds watch --open metro/webapp/index.html?sap-ui-xx-viewCache=false"
+  },
+  "cds": {
+    "requires": {
+      "db": {
+        "[pg]": {
+          "kind": "postgres",
+          "credentials": {
+            "host": "localhost",
+            "port": 5432,
+            "user": "postgres",
+            "password": "postgres",
+            "database": "postgres"
+          }
+        }
+      }
+    }
+  },
+  "sapux": [
+    "app/metro"
+  ]
+}

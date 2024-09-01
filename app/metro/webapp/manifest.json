@@ -1,0 +1,151 @@
+{
+  "_version": "1.59.0",
+  "sap.app": {
+    "id": "com.satinfotech.metro.metro",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:lrop",
+      "version": "1.12.2",
+      "toolsId": "e2293eef-3bd3-481d-82b2-3b5223d65881"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/odata/v4/hydmetro/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "odataVersion": "4.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.127.1",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.ushell": {},
+        "sap.fe.templates": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.satinfotech.metro.metro.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "synchronizationMode": "None",
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      },
+      "@i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "uri": "i18n/i18n.properties"
+      }
+    },
+    "resources": {
+      "css": []
+    },
+    "routing": {
+      "config": {},
+      "routes": [
+        {
+          "pattern": ":?query:",
+          "name": "trainList",
+          "target": "trainList"
+        },
+        {
+          "pattern": "train({key}):?query:",
+          "name": "trainObjectPage",
+          "target": "trainObjectPage"
+        }
+      ],
+      "targets": {
+        "trainList": {
+          "type": "Component",
+          "id": "trainList",
+          "name": "sap.fe.templates.ListReport",
+          "options": {
+            "settings": {
+              "initialLoad": "Enabled",
+              "contextPath": "/train",
+              "variantManagement": "Page",
+              "navigation": {
+                "train": {
+                  "detail": {
+                    "route": "trainObjectPage"
+                  }
+                }
+              },
+              "controlConfiguration": {
+                "@com.sap.vocabularies.UI.v1.LineItem": {
+                  "actions": {
+                    "upload": {
+                      "press": "com.satinfotech.metro.metro.ext.upload.upload.upload",
+                      "visible": true,
+                      "enabled": true,
+                      "requiresSelection": false,
+                      "text": "upload"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "trainObjectPage": {
+          "type": "Component",
+          "id": "trainObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "initialLoad": "Enabled",
+              "editableHeaderContent": false,
+              "contextPath": "/train"
+            }
+          }
+        }
+      }
+    }
+  },
+  "sap.fiori": {
+    "registrationIds": [],
+    "archeType": "transactional"
+  }
+}
