@@ -4,26 +4,27 @@ annotate train with @(
     UI.LineItem: [
         {
             $Type:'UI.DataField',
+            Label : 'Train ID',
             Value: train_id
         },
          {
             $Type:'UI.DataField',
+            Label: 'Train Number',
             Value: train_no
         },
          {
             $Type:'UI.DataField',
+            label: 'Capacity',
             Value: capacity
         },
          {
             $Type:'UI.DataField',
+            label: 'Number of Cars',
             Value: no_of_cars
         },
         {
             $Type:'UI.DataField',
-            Value: m_date
-        },
-        {
-            $Type:'UI.DataField',
+            label: 'Maintenance Status',
             Value: maintenance_status
         },
     ]
@@ -48,10 +49,6 @@ annotate train with @(
          {
             $Type:'UI.DataField',
             Value: no_of_cars
-        },
-        {
-            $Type:'UI.DataField',
-            Value: m_date
         },
         {
             $Type:'UI.DataField',

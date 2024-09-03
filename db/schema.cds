@@ -10,10 +10,7 @@ entity train: managed, cuid {
     capacity: Integer;
     @title: 'Number of Cars'
     no_of_cars: Integer;
-    @title: 'Manufacture Date'
-    m_date: Date;
     @title: 'Maintenance Status'
     maintenance_status: Boolean;
-    
 }
 
