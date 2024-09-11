@@ -145,6 +145,8 @@ oButton.setVisible(false); // Hides the button
 					size: item.getFileObject().size
 				};
 
+				console.log(data);
+
 				var settings = {
 					url: "/hydmetro/Files",
 					method: "POST",
