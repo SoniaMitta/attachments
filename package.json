@@ -18,12 +18,14 @@
   "devDependencies": {
     "@cap-js/cds-types": "^0.6",
     "@cap-js/sqlite": "^1",
-    "@sap/ux-specification": "^1.120.17"
+    "@sap/ux-specification": "^1.124.0"
   },
   "scripts": {
     "start": "cds-serve",
     "watch-hydmetro": "cds watch --open hydmetro/webapp/index.html?sap-ui-xx-viewCache=false",
-    "watch-metro": "cds watch --open metro/webapp/index.html?sap-ui-xx-viewCache=false"
+    "watch-metro": "cds watch --open metro/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-customer": "cds watch --open customer/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-project1": "cds watch --open project1/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "cds": {
     "requires": {
@@ -42,6 +44,7 @@
     }
   },
   "sapux": [
-    "app/metro"
+    "app/metro",
+    "app/customer"
   ]
 }

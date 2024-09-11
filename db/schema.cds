@@ -11,6 +11,25 @@ entity train: managed, cuid {
     @title: 'Number of Cars'
     no_of_cars: Integer;
     @title: 'Maintenance Status'
+
     maintenance_status: Boolean;
+}
+
+entity Files: cuid, managed{
+    @Core.MediaType: mediaType
+    content: LargeBinary;
+    @Core.IsMediaType: true
+    mediaType: String;
+    fileName: String;
+    size: Integer;
+    url: String;
+}
+
+// Define customer entity
+entity customer : managed, cuid {
+    @title: 'Name'
+    name: String(20);
+    @title: 'DOB'
+    dob: Date;
 }
 

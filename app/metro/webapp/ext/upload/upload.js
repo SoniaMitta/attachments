@@ -8,8 +8,9 @@ sap.ui.define([
     "sap/ui/unified/FileUploader",
     "sap/m/MessageToast",
     'sap/ui/export/Spreadsheet',
-    'sap/ui/export/library'
-], function (MessageBox, Dialog, Text, Button, ProgressIndicator, HTML, FileUploader, MessageToast, Spreadsheet, exportLibrary) {
+    'sap/ui/export/library',
+    'sap/m/upload/UploadSet'
+], function (MessageBox, Dialog, Text, Button, ProgressIndicator, HTML, FileUploader, MessageToast, Spreadsheet, exportLibrary,UploadSet) {
     "use strict";
     
     var EdmType = exportLibrary.EdmType; 
