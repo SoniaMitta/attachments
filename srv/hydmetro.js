@@ -57,7 +57,7 @@ module.exports = cds.service.impl(async function () {
     
     this.before('CREATE', 'Files', req => {
         console.log('Create called')
-        console.log(JSON.stringify(req.data))
+        console.log("data",JSON.stringify(req.data))
         req.data.url = `/odata/v4/hydmetro/Files(${req.data.ID})/content`
     })
 

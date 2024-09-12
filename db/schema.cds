@@ -23,6 +23,7 @@ entity Files: cuid, managed{
     fileName: String;
     size: Integer;
     url: String;
+    thumbnailUrl: String;
 }
 
 // Define customer entity
